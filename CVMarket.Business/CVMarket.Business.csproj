@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.25.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CVMarket.Core\CVMarket.Core.csproj" />
+    <ProjectReference Include="..\CVMarket.DAL\CVMarket.DAL.csproj" />
+    <ProjectReference Include="..\CVMarket.Entities\CVMarket.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

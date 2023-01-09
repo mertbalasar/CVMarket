@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33130.400
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVMarket.API", "CVMarket\CVMarket.API.csproj", "{085C5BF9-FE82-4322-8CF9-4574367FFEB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVMarket.Business", "CVMarket.Business\CVMarket.Business.csproj", "{A9EEB7F2-69F2-4C8C-A7D5-D5C1C7166E3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVMarket.Core", "CVMarket.Core\CVMarket.Core.csproj", "{90BAE9FF-1874-4766-8C7C-E91E64697324}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVMarket.Entities", "CVMarket.Entities\CVMarket.Entities.csproj", "{84A5CD64-391B-4167-BFE4-85E7EECC6EDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVMarket.DAL", "CVMarket.DAL\CVMarket.DAL.csproj", "{38506B59-8465-4BB6-849B-7C2B8920C668}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVMarket.TokenWorker", "CVMarket.TokenWorker\CVMarket.TokenWorker.csproj", "{AE3E3258-7193-4C7D-B163-554FA8BB0769}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{085C5BF9-FE82-4322-8CF9-4574367FFEB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{085C5BF9-FE82-4322-8CF9-4574367FFEB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{085C5BF9-FE82-4322-8CF9-4574367FFEB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{085C5BF9-FE82-4322-8CF9-4574367FFEB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9EEB7F2-69F2-4C8C-A7D5-D5C1C7166E3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9EEB7F2-69F2-4C8C-A7D5-D5C1C7166E3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9EEB7F2-69F2-4C8C-A7D5-D5C1C7166E3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9EEB7F2-69F2-4C8C-A7D5-D5C1C7166E3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90BAE9FF-1874-4766-8C7C-E91E64697324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90BAE9FF-1874-4766-8C7C-E91E64697324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90BAE9FF-1874-4766-8C7C-E91E64697324}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90BAE9FF-1874-4766-8C7C-E91E64697324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84A5CD64-391B-4167-BFE4-85E7EECC6EDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84A5CD64-391B-4167-BFE4-85E7EECC6EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84A5CD64-391B-4167-BFE4-85E7EECC6EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84A5CD64-391B-4167-BFE4-85E7EECC6EDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38506B59-8465-4BB6-849B-7C2B8920C668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38506B59-8465-4BB6-849B-7C2B8920C668}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38506B59-8465-4BB6-849B-7C2B8920C668}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38506B59-8465-4BB6-849B-7C2B8920C668}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE3E3258-7193-4C7D-B163-554FA8BB0769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE3E3258-7193-4C7D-B163-554FA8BB0769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE3E3258-7193-4C7D-B163-554FA8BB0769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE3E3258-7193-4C7D-B163-554FA8BB0769}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E3DBDD27-4EED-4461-AC4D-C8CEECE4BEA0}
+	EndGlobalSection
+EndGlobal

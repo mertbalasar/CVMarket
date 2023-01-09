@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "CVMarket.TokenWorker": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
