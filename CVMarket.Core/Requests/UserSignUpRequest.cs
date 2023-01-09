@@ -1,11 +1,12 @@
-﻿using System;
+﻿using CVMarket.Core.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using static CVMarket.Core.Enums.EnumLibrary;
 
 namespace CVMarket.Core.Requests
 {
-    public class UserSignUpRequest
+    public class UserSignUpRequest : IRequestBase
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

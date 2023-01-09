@@ -46,10 +46,12 @@ namespace CVMarket
             services.AddScoped(typeof(IUserService), typeof(UserService));
             services.AddScoped(typeof(IUploadService), typeof(UploadService));
             services.AddScoped(typeof(IMarketService), typeof(MarketService));
+            services.AddScoped(typeof(ICacheService), typeof(CacheService));
 
             services.AddAutoMapper(typeof(MappingProfile));
             services.AddHttpContextAccessor();
             services.AddControllers();
+            services.AddMemoryCache();
 
             services.AddSwaggerGen(c =>
             {
