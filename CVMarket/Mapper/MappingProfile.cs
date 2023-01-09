@@ -21,6 +21,11 @@ namespace CVMarket.API.Mapper
 
             CreateMap<FilesLookUp, FilesModel>();
             CreateMap<FilesModel, FilesLookUp>();
+
+            CreateMap<Market, MarketModel>();
+            CreateMap<MarketModel, Market>();
+            CreateMap<Comment, CommentModel>();
+            CreateMap<CommentModel, Comment>();
         }
     }
 }

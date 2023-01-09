@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using static CVMarket.Core.Enums.EnumLibrary;
 
 namespace CVMarket.Core.Requests
 {
@@ -12,5 +13,6 @@ namespace CVMarket.Core.Requests
         public string Password { get; set; }
         public string Email { get; set; }
         public DateTime? BirthDay { get; set; }
+        public UserType Type { get; set; }
     }
 }

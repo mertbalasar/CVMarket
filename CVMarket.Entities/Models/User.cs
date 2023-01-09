@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CVMarket.Entities.Base;
+using static CVMarket.Core.Enums.EnumLibrary;
 
 namespace CVMarket.Entities.Models
 {
@@ -20,6 +21,6 @@ namespace CVMarket.Entities.Models
         public string Token { get; set; }
         public DateTime? TokenExpireAt { get; set; }
         public DateTime? BirthDay { get; set; }
-        public bool IsPremium { get; set; } = false;
+        public UserType Type { get; set; } = UserType.Standart;
     }
 }

@@ -8,4 +8,8 @@
     <PackageReference Include="MongoDB.Bson" Version="2.18.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CVMarket.Core\CVMarket.Core.csproj" />
+  </ItemGroup>
+
 </Project>

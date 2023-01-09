@@ -20,11 +20,14 @@ namespace CVMarket.Business.Services
     public class UploadService : ServiceBase, IUploadService
     {
         private readonly IMongoRepository<Files> _filesRepository;
+        private readonly IMarketService _marketService;
 
         public UploadService(IHttpContextAccessor httpAccessor,
-            IMongoRepository<Files> filesRepository) : base(httpAccessor)
+            IMongoRepository<Files> filesRepository,
+            IMarketService marketService) : base(httpAccessor)
         {
             _filesRepository = filesRepository;
+            _marketService = marketService;
         }
 
         public async Task<ServiceResponse> UploadFile(IFormFile file)
@@ -40,23 +43,39 @@ namespace CVMarket.Business.Services
                     Directory.CreateDirectory(path);
                 }
 
-                var filePath = path + "/" + DateTime.UtcNow.Ticks.ToString() + "_" + file.FileName;
+                if (!file.FileName.ToLower().EndsWith(".pdf"))
+                {
+                    response.Code = 500;
+                    response.Message = "Could not upload file without PDF. Please make sure upload the PDF file.";
+                    goto exit;
+                }
+
+                var filePath = path + "/" + User.Id + "_CV.pdf";
 
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     file.CopyTo(stream);
                 }
 
-                var res = await _filesRepository.InsertOneAsync(new Files
+                var resFile = await _filesRepository.InsertOneAsync(new Files
                 {
                     UserId = ObjectId.Parse(User.Id),
                     FilePath = filePath
                 });
 
-                if (res.Code != 200)
+                if (resFile.Code != 200)
                 {
-                    response.Code = res.Code;
-                    response.Message = res.Message;
+                    response.Code = resFile.Code;
+                    response.Message = resFile.Message;
+                    goto exit;
+                }
+
+                var resMarket = await _marketService.AddToMarket(resFile.Result);
+
+                if (resMarket.Code != 200)
+                {
+                    response.Code = resMarket.Code;
+                    response.Message = resMarket.Message;
                 }
             }
             catch (Exception e)
@@ -65,6 +84,7 @@ namespace CVMarket.Business.Services
                 response.Message = e.Message;
             }
 
+            exit:;
             return response;           
         }
 
@@ -92,7 +112,7 @@ namespace CVMarket.Business.Services
                             .Exclude("User.TokenExpireAt");
 
                 var files = aggregate.Result
-                    .Lookup<Files, FilesLookUp>("user", "UserId", "_id", "User")
+                    .Lookup<Files, FilesLookUp>("users", "UserId", "_id", "User")
                     .Project<FilesLookUp>(projection)
                     .Unwind(x => x.User, unwindOptions)
                     .As<FilesLookUp>()

@@ -45,6 +45,7 @@ namespace CVMarket
             services.AddScoped(typeof(IHomeService), typeof(HomeService));
             services.AddScoped(typeof(IUserService), typeof(UserService));
             services.AddScoped(typeof(IUploadService), typeof(UploadService));
+            services.AddScoped(typeof(IMarketService), typeof(MarketService));
 
             services.AddAutoMapper(typeof(MappingProfile));
             services.AddHttpContextAccessor();
